@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+ postgresdb:
+  image: 192.168.253.10:8082/postgres:9.5.22
+  container_name: postgresdb
+  restart: always
+  environment:
+   POSTGRES_PASSWORD: postgres
+  volumes:
+    - ./postgres-data:/var/lib/postgresql/data
+  ports:
+    - 5432:5432
